@@ -23,7 +23,7 @@ const SingleBook = (props: SingleBookProps) => {
                 <div className="card-text">Price: ${book?.price}</div>
                 <div className="card-text">Category: {book?.name}</div>
                 <div>
-                <Link className='btn btn-primary shadow m-3' to={`/${book?.id}/edit`}>Edit Book</Link>
+                <Link className='btn btn-primary shadow m-3' to={`/edit/${book?.id}`}>Edit Book</Link>
                 <Link className='btn btn-primary shadow m-3' to={`/books`}>Go Back</Link>
                 </div>
             </div>
