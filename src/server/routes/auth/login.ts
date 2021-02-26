@@ -1,10 +1,13 @@
 import { Router } from 'express';
+import {signToken} from '../../utils/tokens';
+import * as passport from 'passport';
 
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.post('/', passport.authenticate('local'), async (req: any, res) => {
     try {
-        res.json('TEST');
+        const token = signToken({userid: req.user.id})
+        res.json(token);
     } catch (error) {
         console.log(error);
         res.status(500).json({ msg: 'my code sucks', error: error.message })
