@@ -15,15 +15,19 @@ const Register = (props: RegisterProps) => {
         e.preventDefault();
         const token = await apiService(`/auth/register`, 'POST', { name, email, password })
         setStorage(token)
-        history.push('/')
+        history.push('/books')
     }
 
 
     return (
         <>
-            <h1 className="text-center m-4">Register</h1>
             <div className="container">
-                <div className="row d-flex justify-content-center">
+            <div className="row justify-content-center">   
+                <div className="col-md-4">
+                    <h1 className="border-bottom border-primary mt-5 text-center">Register</h1>
+                    </div>
+                </div>
+                <div className="row d-flex justify-content-center mt-5">
             <div className="col-md-6">
                     <div className="form-group m-3">
                         <label> Name</label>
@@ -36,7 +40,7 @@ const Register = (props: RegisterProps) => {
                         <input type="password" className="form-control" onChange={e => setPassword(e.target.value)} />
 
                     
-                        <div>
+                        <div className="d-flex justify-content-end">
                             <button className="btn btn-primary shadow m-3" onClick={register}>Register</button>
                         </div>
                     </div>

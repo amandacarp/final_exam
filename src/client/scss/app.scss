@@ -2,4 +2,18 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+
+body{
+    background:
+    linear-gradient(50deg, steelblue, transparent 70%)
+}
+
+.card{
+    background-color: grey!important;
+    color: white
+}
+
+#image{
+    border-radius: 20%
+}
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

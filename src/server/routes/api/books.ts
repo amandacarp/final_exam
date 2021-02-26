@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import * as passport from 'passport';
 import db from '../../db';
 
 const router = Router();
@@ -14,7 +15,7 @@ router.get('/:id?', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', passport.authenticate('jwt'), async (req, res) => {
     const newBook = req.body
     try {
         const result = await db.Books.insert(newBook)
@@ -25,7 +26,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', passport.authenticate('jwt'), async (req, res) => {
     const id = Number(req.params.id)
     const editedBook = req.body
     try {
@@ -38,7 +39,7 @@ router.put('/:id', async (req, res) => {
 })
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', passport.authenticate('jwt'), async (req, res) => {
     const id = Number(req.params.id)
     try {
         const result = await db.Books.destroy(id)

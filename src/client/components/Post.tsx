@@ -28,9 +28,14 @@ const Post = (props: PostProps) => {
 
     return (
         <>
-            <h1 className="text-center m-4">Post Book</h1>
+            
             <div className="container">
-                <div className="row d-flex justify-content-center">
+            <div className="row justify-content-center">   
+                <div className="col-md-4">
+                    <h1 className="border-bottom border-primary mt-5 text-center">Post</h1>
+                    </div>
+                </div>
+                <div className="row d-flex justify-content-center mt-5">
             <div className="col-md-6">
                     <div className="form-group m-3">
                         <label> Title</label>
@@ -51,8 +56,8 @@ const Post = (props: PostProps) => {
                                 ))}
                             </select>
                         </div>
-                        <div>
-                            <button className="btn btn-primary shadow m-3" onClick={PostBook}>Save Post</button>
+                        <div className="d-flex justify-content-end">
+                            <button className="btn btn-primary shadow m-3" onClick={PostBook}> Post</button>
                         </div>
                     </div>
                 </div>

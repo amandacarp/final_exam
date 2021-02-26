@@ -62,7 +62,7 @@ const Edit = (props: EditProps) => {
                                     ))}
                                 </select>
                             </div>
-                            <div>
+                            <div className="d-flex justify-content-end">
                                 <button className="btn btn-primary shadow m-3" onClick={editBook}>Save Edit</button>
                                 <button className="btn btn-primary shadow m-3" onClick={deleteBook}>Delete Book</button>
                             </div>

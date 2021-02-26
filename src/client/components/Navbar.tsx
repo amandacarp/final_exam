@@ -6,7 +6,7 @@ const Navbar = (props: NavbarProps) => {
 
     return (
         <>
-            <nav className="navbar bg-secondary">
+            <nav className="navbar shadow bg-secondary">
                 <Link className='btn btn-primary shadow' to='/'>Home</Link>
                 <Link className='btn btn-primary shadow' to='/books/register'>Register</Link>
                 <Link className='btn btn-primary shadow' to='/books/login'>Login</Link>
