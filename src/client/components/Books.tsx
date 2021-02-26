@@ -23,8 +23,8 @@ const Books = (props: BooksProps) => {
                 </div>
                 <div className="row justify-content-center mt-5">
                     {books?.map(book => (
-                        <div className="col-md-4">
-                            <div key={book?.id} className="card m-3">
+                        <div key={book?.id} className="col-md-4">
+                            <div className="card m-3">
                                 <div className="card-header text-center">Title: {book?.title}</div>
                                 <div className="card-text text-center">Author: {book?.author}</div>
                                 <div className="card-text text-center">Price: ${book?.price}</div>
